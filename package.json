@@ -10,14 +10,13 @@
   "main": "webapp/index.html",
   "dependencies": {
     "@sap/html5-app-deployer": "^7.0.2",
-    "express": "^4.21.2",
     "@sap/ux-ui5-tooling": "1",
-    "@ui5/cli": "^3.0.0",
+    "@ui5/cli": "^4.0.22",
+    "express": "^5.1.0",
     "mbt": "^1.2.29",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.0.1",
     "ui5-task-zipper": "^3.4.x"
   },
-  "devDependencies": {},
   "scripts": {
     "prestart": "npm install && npm run build && npm run",
     "start": "node node_modules/@sap/html5-app-deployer/index.js",
