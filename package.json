@@ -17,7 +17,6 @@
     "ui5-task-zipper": "^3.4.x"
   },
   "scripts": {
-    "prestart": "npm install && npm run build && npm run",
     "start": "node node_modules/@sap/html5-app-deployer/index.js",
     "start-flp": "fiori run --open \"test/flp.html#app-preview\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flp.html#app-preview\"",
