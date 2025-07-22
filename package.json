@@ -20,7 +20,7 @@
     "start": "node node_modules/@sap/html5-app-deployer/index.js",
     "start-flp": "fiori run --open \"test/flp.html#app-preview\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flp.html#app-preview\"",
-    "build": "ui5 build --config=ui5.yaml --clean-dest --dest resources",
+    "build": "mkdir resources && build --config=ui5.yaml --clean-dest --dest resources",
     "deploy": "fiori cfDeploy",
     "deploy-config": "fiori add deploy-config",
     "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
