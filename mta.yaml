@@ -30,7 +30,7 @@ modules:
     type: html5
     path: .
     build-parameters:
-      build-result: dist
+      build-result: resources/dist
       builder: custom
       commands:
         - npm install
