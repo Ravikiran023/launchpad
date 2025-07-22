@@ -1,0 +1,44 @@
+{
+  "xsappname": "commelodysuitelaunchpad",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.MelodyUser",
+      "description": "Melody User"
+    },
+    {
+      "name": "$XSAPPNAME.SAPEmployee",
+      "description": "SAP Employee"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },
+    {
+      "name": "MelodyUser",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.MelodyUser",
+        "$XSAPPNAME.SAPEmployee"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.ondemand.com/login/callback",
+      "https://*.applicationstudio.cloud.sap/login/callback",
+      "https://*.hana.ondemand.com/login/callback"
+    ]
+  }
+}

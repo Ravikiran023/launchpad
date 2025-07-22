@@ -1,0 +1,12 @@
+{
+  "name": "launchpage-approuter",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/approuter": "^20.0.0",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

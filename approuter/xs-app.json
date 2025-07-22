@@ -1,0 +1,65 @@
+{
+  "welcomeFile": "commelodysuitelaunchpad/launchpage.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/resources/com/melody/lib/(.*)$",
+      "target": "/$1",
+      "authenticationType": "none",
+      "destination": "melodytoolslib"
+    },
+    {
+      "source": "^/int_pc/(.*)$",
+      "target": "/$1",
+      "destination": "int_ls",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/int_ls/(.*)$",
+      "target": "/$1",
+      "destination": "int_ls",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/intis/(.*)$",
+      "target": "/$1",
+      "destination": "int_is",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/int_ic/(.*)$",
+      "target": "/$1",
+      "destination": "int_ic",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/resources/(.*)$",
+      "target": "/resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/test-resources/(.*)$",
+      "target": "/test-resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/btp/(.*)$",
+      "target": "/$1",
+      "destination": "ext_harmony_btp",
+      "authenticationType": "xsuaa",
+      "scope": [
+        "$XSAPPNAME.SAPEmployee"
+      ],
+      "csrfProtection": false
+    }
+  ],
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  }
+}

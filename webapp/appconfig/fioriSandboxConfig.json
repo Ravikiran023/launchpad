@@ -1,0 +1,169 @@
+{
+    "services": {
+        "LaunchPage": {
+            "adapter": {
+                "config": {
+                    "catalogs": [],
+                    "groups": [
+                        {
+                            "id": "MelodysuiteLaunchpad",
+                            "title": "Melodysuite Launchpad",
+                            "isPreset": true,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [
+                                {
+                                    "id": "Melodysuite Launchpad",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "Melodysuite Applications",
+                                        "targetURL": "#pc-app"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": true
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "config": {
+                    "inbounds": {
+                        "pc-app": {
+                            "semanticObject": "pc",
+                            "action": "app",
+                            "title": "Dashboard",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-dashboard-approuter.cfapps.eu10-004.hana.ondemand.com/compresalescentral/"
+                            }
+                        },
+                        "pcactivityset-app": {
+                            "semanticObject": "pcactivityset",
+                            "action": "app",
+                            "title": "Activity Sets",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.activityset",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-activitysetlist79768671.cfapps.eu10-004.hana.ondemand.com/compresalescentralactivityset"
+                            }
+                        },
+                        "pcactivityform-app": {
+                            "semanticObject": "pcactivityform",
+                            "action": "app",
+                            "title": "Activity Registration",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.activityform",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-activityform-approuter.cfapps.eu10-004.hana.ondemand.com/compresalescentralactivityform"
+                            }
+                        },
+                        "pcdbrform-app": {
+                            "semanticObject": "pcdbrform",
+                            "action": "app",
+                            "title": "Demo Build Request",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.dbrform",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-dbrform-approuter.cfapps.eu10-004.hana.ondemand.com/compresalescentraldbrform"
+                            }
+                        },
+                        "sl-App": {
+                            "semanticObject": "sl",
+                            "action": "App",
+                            "title": "Successline",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.successline",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-successline-approuter.cfapps.eu10-004.hana.ondemand.com/compresalescentralsuccessline"
+                            }
+                        },
+                        "pctranslationsummary-app": {
+                            "semanticObject": "pctranslationsummary",
+                            "action": "app",
+                            "title": "Translation Summary",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.translationsummary",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-translationsumm34f5fcb1.cfapps.eu10-004.hana.ondemand.com/compresalescentraltranslationsummary"
+                            }
+                        },
+                        "pctranslationform-app": {
+                            "semanticObject": "pctranslationform",
+                            "action": "app",
+                            "title": "Presales Translation Request",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.translationform",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-translationrequ4f1b8108.cfapps.eu10-004.hana.ondemand.com/compresalescentraltranslationform"
+                            }
+                        },
+                        "ore3-Display": {
+                            "semanticObject": "ore3",
+                            "action": "Display",
+                            "title": "Melody Online Roster Editor",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.presalescentral.ore3",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-ore3-approuter.cfapps.eu10-004.hana.ondemand.com/compresalescentralore3"
+                            }
+                        },
+                        "dla_app-Display": {
+                            "semanticObject": "dla_app",
+                            "action": "Display",
+                            "title": "DL Automation",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.sap.dlautomation",
+                                "url": "https://sapit-presales-dev-giraffe-melody-suite-dlautomation-approuter.cfapps.eu10-004.hana.ondemand.com/comsapdlautomation"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
