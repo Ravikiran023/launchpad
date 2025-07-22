@@ -11,7 +11,6 @@
   "dependencies": {
     "@sap/html5-app-deployer": "^7.0.2",
     "@sap/ux-ui5-tooling": "1",
-    "@ui5/cli": "^4.0.22",
     "express": "^5.1.0",
     "mbt": "^1.2.29",
     "rimraf": "^6.0.1",
@@ -34,5 +33,9 @@
     "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo --dest resources/dist",
     "copy:config": "cp xs-app.json resources/dist && cp package.json resources/dist"
   },
-  "sapuxLayer": "CUSTOMER_BASE"
+  "sapuxLayer": "CUSTOMER_BASE",
+  "devDependencies": {
+    "@sap/html5-repo-mock": "^2.2.1",
+    "@ui5/cli": "^4.0.22"
+  }
 }
