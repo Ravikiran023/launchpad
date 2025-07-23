@@ -1,7 +1,30 @@
 const fs = require("fs");
 const path = require("path");
 
-function listTopFoldersAndOneLevel(baseDir) {
+function listSubfolders(folderPath, depth) {
+    if (depth === 0) return [];
+
+    let subfolders = [];
+    try {
+        const entries = fs.readdirSync(folderPath, { withFileTypes: true });
+        for (const entry of entries) {
+            if (entry.isDirectory()) {
+                const fullPath = path.join(folderPath, entry.name);
+                const children = listSubfolders(fullPath, depth - 1);
+                subfolders.push({
+                    name: entry.name,
+                    subfolders: children
+                });
+            }
+        }
+    } catch (err) {
+        console.warn("Error reading:", folderPath, err.message);
+    }
+
+    return subfolders;
+}
+
+function listTopFolders(baseDir) {
     const result = {
         files: [],
         folders: []
@@ -12,11 +35,9 @@ function listTopFoldersAndOneLevel(baseDir) {
     entries.forEach((entry) => {
         if (entry.isDirectory()) {
             const folderPath = path.join(baseDir, entry.name);
-            const subEntries = fs.readdirSync(folderPath, { withFileTypes: true });
-            const subfolders = subEntries
-                .filter((sub) => sub.isDirectory())
-                .map((sub) => sub.name);
+            const depth = entry.name === "resources" ? 2 : 1;
 
+            const subfolders = listSubfolders(folderPath, depth);
             result.folders.push({
                 folder: entry.name,
                 subfolders: subfolders
@@ -30,6 +51,5 @@ function listTopFoldersAndOneLevel(baseDir) {
 }
 
 const basePath = __dirname;
-const folderStructure = listTopFoldersAndOneLevel(basePath);
-
+const folderStructure = listTopFolders(basePath);
 console.log(JSON.stringify(folderStructure, null, 2));
