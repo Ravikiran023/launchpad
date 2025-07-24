@@ -35,7 +35,6 @@ modules:
       commands:
         - npm install
         - npm run build:cf
-        - npm run copy:config
       supported-platforms: []
 resources:
   - name: commelodysuitelaunchpad-html-repo-runtime
