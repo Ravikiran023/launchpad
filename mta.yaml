@@ -23,7 +23,7 @@ modules:
     parameters:
       no-route: true
       buildpacks:
-        - https://github.com/cloudfoundry/nodejs-buildpack
+        - nodejs_buildpack
     requires:
       - name: commelodysuitelaunchpad-repo-host-service
   - name: commelodysuitelaunchpad

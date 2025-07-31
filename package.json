@@ -10,21 +10,20 @@
   "main": "webapp/index.html",
   "dependencies": {
     "@sap/html5-app-deployer": "^7.0.2",
+    "express": "^4.21.2",
     "@sap/ux-ui5-tooling": "1",
-    "cpx": "^1.5.0",
-    "express": "^5.1.0",
+    "@ui5/cli": "^3.0.0",
     "mbt": "^1.2.29",
-    "npm-build-zip": "^1.0.4",
-    "rimraf": "^6.0.1",
+    "rimraf": "^5.0.5",
     "ui5-task-zipper": "^3.4.x"
   },
+  "devDependencies": {},
   "scripts": {
-    "prestart": "ls",
+    "prestart": "npm install && npm run build && npm run",
     "start": "node node_modules/@sap/html5-app-deployer/index.js",
     "start-flp": "fiori run --open \"test/flp.html#app-preview\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flp.html#app-preview\"",
-    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist && npm run update-resourse",
-    "update-resourse": "mkdirp dist/resources/dist && cpx \"dist/**/*\" dist/resources/dist",
+    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "deploy": "fiori cfDeploy",
     "deploy-config": "fiori add deploy-config",
     "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
@@ -33,14 +32,8 @@
     "unit-test": "fiori run --open 'test/unit/unitTests.qunit.html'",
     "build:mta": "rimraf resources mta_archives && mbt build",
     "undeploy": "cf undeploy commelodysuitelaunchpad --delete-services --delete-service-keys --delete-service-brokers",
-    "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo --dest dist && copy:config && npm run update-resourse",
-    "copy:config": "cp xs-app.json resources/dist && cp package.json resources/dist && npm run read:file",
-    "read:file": "node folderReader.js",
-    "create-zip": "npm-build-zip --name_only=true --name=commelodysuitelaunchpad --source=dist/ --destination=resources/dist"
+    "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo --dest resources/dist",
+    "copy:config": "cp xs-app.json resources/dist && cp package.json resources/dist"
   },
-  "sapuxLayer": "CUSTOMER_BASE",
-  "devDependencies": {
-    "@sap/html5-repo-mock": "^2.2.1",
-    "@ui5/cli": "^4.0.22"
-  }
+  "sapuxLayer": "CUSTOMER_BASE"
 }
