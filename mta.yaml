@@ -26,6 +26,10 @@ modules:
         - nodejs_buildpack
     requires:
       - name: commelodysuitelaunchpad-repo-host-service
+    build-parameters:
+      requires:
+        - name: commelodysuitelaunchpad
+          target-path: resources/dist
   - name: commelodysuitelaunchpad
     type: html5
     path: .
